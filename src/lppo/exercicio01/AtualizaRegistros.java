@@ -25,7 +25,7 @@ public class AtualizaRegistros {
             Connection conexao = DriverManager.getConnection(url, "usuario", "senha");
             System.out.println("Conexao aberta com sucesso!");
             
-            String sql="UPDATE contato SET nome = 'José'WHERE id =3 ";
+            String sql="UPDATE contato SET nome = 'José', sobrenome = 'Antonio' WHERE id =3 ";
             Statement operacao = conexao.createStatement();
             Integer n = operacao.executeUpdate(sql);
             System.out.println(n+ " registros atualizados!");
