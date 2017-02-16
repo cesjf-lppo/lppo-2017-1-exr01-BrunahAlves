@@ -15,8 +15,7 @@ public class CriaTabela {
             String url = "jdbc:derby://localhost:1527/lppo-2017-1";
             Connection conexao = DriverManager.getConnection(url, "usuario", "senha");
             System.out.println("Conexao aberta com sucesso!");
-            
-            String sql="CREATE TABLE contato(nome VARCHAR(50), sobrenome VARCHAR(50), telefone VARCHAR(11), email VARCHAR(50))";
+            String sql="CREATE TABLE contato(id INT not null primary key GENERATED ALWAYS AS IDENTITY(START WITH 1, INCREMENT BY 1), nome VARCHAR(50), sobrenome VARCHAR(50), telefone VARCHAR(11), email VARCHAR(50))";
             Statement operacao = conexao.createStatement();
             operacao.executeUpdate(sql);
             System.out.println("Tabela criada");
